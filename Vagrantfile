@@ -5,6 +5,7 @@ Vagrant.configure("2") do |config|
     saltmaster.vm.hostname = "saltmaster"
     saltmaster.vm.network "private_network", ip: "192.168.1.2"
     saltmaster.vm.provision "shell", path: "salt_master.sh"
+    saltmaster.vm.synced_folder "srv", "/srv/"
 
   end
 
